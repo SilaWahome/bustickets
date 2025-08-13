@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Routes & Schedules</h2>
+  <table class="table">
+    <tr><th>Route</th><th>Duration</th><th>Price</th><th>Schedules</th></tr>
+    {% for r in routes %}
+      <tr>
+        <td>{{ r.from }} → {{ r.to }}</td>
+        <td>{{ r.duration }}</td>
+        <td>KES {{ r.price }}</td>
+        <td>
+          <ul>
+          {% for s in schedules if s.route_id==r.id %}
+            <li>{{ s.departure }} • Seats left: {{ s.seats_left }} • <a href="{{ url_for('book', schedule_id=s.id) }}">Book</a></li>
+          {% endfor %}
+          </ul>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

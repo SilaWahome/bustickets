@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Fleet Management</h2>
+  <ul>
+    {% for f in fleet %}
+      <li><strong>{{ f.name }}</strong> — Capacity: {{ f.capacity }} — Status: {{ f.status }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

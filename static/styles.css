@@ -1,0 +1,26 @@
+:root{--accent:#2b8aef;--muted:#666;}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif; margin:0; color:#222;}
+.container{max-width:980px;margin:20px auto;padding:0 16px;}
+.topbar{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10;}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;}
+.brand{margin:0;color:var(--accent);}
+.nav a{margin-left:12px;text-decoration:none;color:#333;font-weight:600;}
+.hero{padding:18px 0;border-bottom:1px solid #f2f2f2;}
+.cards{display:flex;gap:12px;margin-top:12px;}
+.card{flex:1;padding:12px;border:1px solid #eee;border-radius:8px;background:#fafafa;}
+.features{columns:2;list-style:none;padding:0;margin:0;}
+.table{width:100%;border-collapse:collapse;margin-top:12px;}
+.table th,.table td{border:1px solid #eee;padding:8px;text-align:left;}
+.form label{display:block;margin:8px 0;}
+.seatmap{margin:12px 0;}
+.seat{display:inline-block;margin:2px;}
+.seat input{display:none;}
+.seat{width:40px;height:40px;border:1px solid #ccc;display:inline-flex;align-items:center;justify-content:center;border-radius:6px;cursor:pointer;background:#fff;}
+.seat.occupied{background:#ddd;color:#888;cursor:not-allowed;}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border:none;border-radius:6px;cursor:pointer;}
+.messages{margin:10px 0;}
+.msg{padding:8px;border-radius:6px;margin-bottom:6px;}
+.msg.success{background:#e6f7e6;border:1px solid #bfe6bf;color:#155724;}
+.msg.error{background:#ffecec;border:1px solid #f4c2c2;color:#721c24;}
+.footer{padding:12px 0;text-align:center;color:var(--muted);border-top:1px solid #f2f2f2;margin-top:20px;}
+.ticket{border:1px dashed #ccc;padding:12px;border-radius:8px;background:#fff;}

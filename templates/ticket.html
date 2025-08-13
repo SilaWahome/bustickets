@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>E-Ticket #{{ b.id }}</h2>
+  <div class="ticket">
+    <p><strong>Passenger:</strong> {{ b.name }} ({{ b.phone }})</p>
+    <p><strong>Route:</strong> {{ b.route.from }} → {{ b.route.to }}</p>
+    <p><strong>Seat:</strong> {{ b.seat }}</p>
+    <p><strong>Price:</strong> KES {{ b.price }}</p>
+    <p><strong>Issued:</strong> {{ b.created_at }}</p>
+  </div>
+{% endblock %}

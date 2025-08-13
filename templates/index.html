@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="hero">
+    <h2>Streamline your bus ticketing and reservations</h2>
+    <p>Demo of Bus365 – features, booking, seat selection, routes, and fleet management.</p>
+  </section>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Available Routes</h3>
+      <ul>
+        {% for r in routes %}
+          <li><strong>{{ r.from }} → {{ r.to }}</strong> • KES {{ r.price }} • <a href="{{ url_for('routes_page') }}">view</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Upcoming Schedules</h3>
+      <ul>
+        {% for s in schedules %}
+          <li>{{ s.departure }} • Seats left: {{ s.seats_left }} • <a href="{{ url_for('book', schedule_id=s.id) }}">Book</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Fleet Snapshot</h3>
+      <ul>
+        {% for f in fleet %}
+          <li>{{ f.name }} • Cap: {{ f.capacity }} • {{ f.status }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

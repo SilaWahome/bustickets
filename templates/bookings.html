@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Bookings</h2>
+  {% if bookings %}
+  <table class="table">
+    <tr><th>ID</th><th>Passenger</th><th>Route</th><th>Seat</th><th>Price</th></tr>
+    {% for b in bookings %}
+      <tr>
+        <td>{{ b.id }}</td>
+        <td>{{ b.name }} ({{ b.phone }})</td>
+        <td>{{ b.route.from }} → {{ b.route.to }}</td>
+        <td>{{ b.seat }}</td>
+        <td>KES {{ b.price }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>No bookings yet — try the demo booking link on the home page.</p>
+  {% endif %}
+{% endblock %}
